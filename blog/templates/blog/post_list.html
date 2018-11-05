@@ -1,16 +1,25 @@
+{% load static %}
 <html>
     <head>
         <title>marcode_blog</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		
+		<link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet"> 
     </head>
-    <body>
+    
+	<body>
         <div>
             <h1><a href="/">marcode_blog</a></h1>
+			<hr>
         </div>
 			{% for post in posts %}
 				<div>
 					<p>published: {{ post.published_date }}</p>
-					<h1><a href="">{{ post.title }}</a></h1>
+					<h2><a href="">{{ post.title }}</a></h2>
 					<p>{{ post.text|linebreaksbr }}</p>
+					<hr>
 				</div>
 			{% endfor %}
 			
